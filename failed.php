@@ -1,6 +1,6 @@
 <?php 
 if($_GET['payment_request_id'] == '')
-	header('Location: book.php');
+	header('Location: index.php');  
 
 include 'config.php';
 $ch = curl_init();

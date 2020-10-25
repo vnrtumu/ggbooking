@@ -4,7 +4,7 @@ $connect = mysqli_connect("localhost","root","","hypertec_venky");
 // Check connection
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  exit();
+  exit();  
 }
 
 $api_key 	= 	'f83c9c294019f204db3cb108a7f0f0f4';

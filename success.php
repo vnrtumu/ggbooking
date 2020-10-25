@@ -6,7 +6,7 @@ if($_GET['payment_status'] != 'Credit')
 	header('Location: failed.php?payment_request_id='.$_GET['payment_request_id'].'&payment_id='.$_GET['payment_id'].'&payment_status='.$_GET['payment_status']);
 
 if(!@$_GET['payment_request_id'])
-	header('Location: book.php');
+	header('Location: index.php');  
 
 
 
