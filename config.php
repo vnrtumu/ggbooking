@@ -1,5 +1,10 @@
 <?php 
-$connect = mysqli_connect("localhost","root","","hypertec_venky");
+// $connect = mysqli_connect("localhost","root","","hypertec_venky");
+
+$connect = mysqli_connect("bskhiboo9bogot0zbdcb-mysql.services.clever-cloud.com","urafqi6yoms5du3c","rP4VT6VBgYikfr29z80y","bskhiboo9bogot0zbdcb");
+
+
+
 
 // Check connection
 if (mysqli_connect_errno()) {
