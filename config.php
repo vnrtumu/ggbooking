@@ -12,8 +12,8 @@ if (mysqli_connect_errno()) {
   exit();  
 }
 
-$api_key 	= 	'f83c9c294019f204db3cb108a7f0f0f4';
-$api_token	=	'98680295941e9ec498e95d8121a5fbe2';
+$api_key 	= 	'test_409cf93b1161cde95b03f898c4b';
+$api_token	=	'test_83cb954247532b1b14f7c305657';
 
 $category = array('mj'=>'Mystery Junkies', 'la'=>'Laser Adda','combo'=>'Combo');
 

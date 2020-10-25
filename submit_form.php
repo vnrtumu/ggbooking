@@ -13,15 +13,13 @@ $reg_val	=	$_POST['reg_val'];
 $persons	=	$_POST['persons'];
 $unique_id	=	$package.'_'.uniqid();		
 
-if($book_type == 'Regular')
-	$price = array('mj'=>'695', 'la'=>'299','combo'=>'994');
-else
-	$price = array('mj'=>'595', 'la'=>'249','combo'=>'849');
+if($book_type == 'Regular') {
+	$pricearr = array('mj'=>'695', 'la'=>'299','combo'=>'994');
+} else {
+	$pricearr = array('mj'=>'595', 'la'=>'249','combo'=>'849');
+}	
 
-if($email = 'rdharunravi@gmail.com')
-	$price = 9;
-else	
-	$price = $price[$package];
+$price = $pricearr[$package] * $persons;
 	
 	$insert_query = "INSERT INTO `slot_booking`(`name`, `email`, `phone`, `date_slot`, `time_slot`, `book_type`, `package`, `reg_val`, `persons`, `price`, `unique_id`) VALUES ('".$name."','".$email."','".$phone."','".$date_slot."','".$time_slot."','".$book_type."','".$package."','".$reg_val."','".$persons."','".$price."','".$unique_id."')";
 	mysqli_query($connect,$insert_query);
@@ -31,7 +29,7 @@ else
     //Download from website
 //$api = new Instamojo\Instamojo('YOU_PRIVATE_API_KEY', 'YOUR_PRIVATE_AUTH_TOKEN','https://test.instamojo.com/api/1.1/');
 
-$api = new Instamojo\Instamojo($api_key, $api_token,'https://www.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo($api_key, $api_token,'https://test.instamojo.com/api/1.1/');
 try {
     $response = $api->paymentRequestCreate(array(
         "purpose" => $unique_id,
@@ -42,8 +40,8 @@ try {
         "send_sms" => true,
         "email" => $email,
         'allow_repeated_payments' => true,
-        "redirect_url" => "http://hypertechno.in/success.php",
-        "webhook" => "http://hypertechno.in/webhook.php"
+        "redirect_url" => "https://ggbooking.herokuapp.com/success.php",
+        "webhook" => "https://ggbooking.herokuapp.com/webhook.php"
         ));
     //print_r($response); 
     $pay_url = $response['longurl'];

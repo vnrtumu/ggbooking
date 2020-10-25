@@ -14,7 +14,7 @@ include 'config.php';
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'https://www.instamojo.com/api/1.1/payment-requests/'.$_GET['payment_request_id'].'/');
+curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/'.$_GET['payment_request_id'].'/');
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -48,8 +48,8 @@ $package= $category[$result['package']];
 if($result['payment_success'] == '1')
 {
 											$url = 'https://api.sendgrid.com/';
-											$user = 'DharunAashick';
-											$pass = 'Admin@123';
+											$user = 'venkat690';
+											$pass = 'sreevenky4';
 											$request =  $url.'api/mail.send.json';
 											$subject = 'Payment Success';
 											$message = '<html><body><p><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"></span></p>
@@ -129,7 +129,7 @@ if($result['payment_success'] == '1')
 													'api_user'  => $user,
 													'api_key'   => $pass,
 													'to[0]'     => $email,
-													'to[1]'     => "dharunaashick@gmail.com",
+													'to[1]'     => "tvnr690@gmail.com",
 													'subject'   => $subject,
 													'html'      => $message,
 													'text'      => '',

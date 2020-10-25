@@ -75,126 +75,123 @@ footer {
 
 <body>
 	<form method="post" action="submit_form.php">
-<div class="container contact">
-	<div class="row">
-		<div class="col-md-3">
-			<div class="contact-info">
-				<!--<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>-->
-				<h2 style="color: white;">Booking</h2>
-				<h4 style="color: white;">Book your game here</h4>
-			</div>
-		</div>
-
-		<div class="col-md-9">
-			<div class="contact-form">
-				<div class="form-group">
-				  <label class="control-label col-sm-2" for="name">Game:</label>
-				  <div class="col-sm-10"> 
-				  <h5><?php echo $category[$package]; ?></h5>         
-				  </div>
-				</div>
-			</div>
-			<div class="contact-form row">
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-2" for="name">Name*:</label>
-				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-2" for="email">Email*:</label>
-				  <div class="col-sm-10 col-sm-6">
-					<input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-2" for="phone">Phone*:</label>
-				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-2" for="date_slot">Date*:</label>
-				  <div class="col-sm-10">
-					<input type="date"  class="form-control" id="date_slot" name="date_slot"  min="<?php echo date("Y-m-d"); ?>" max="<?php echo  date("Y-m-d", strtotime("+30 days")); ?>" required>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-6" for="time_slot">Time*:</label>
-				  <div class="col-sm-10">
-					<select class="form-control" name="time_slot" id="time_slot" required>
-							<option value="">Select</option>
-							<?php foreach($timeing[$package] as $key=>$val) { ?>
-							<option value="<?php echo $val; ?>"><?php echo $val; ?></option>
-							<?php } ?>
-							
-					</select>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-6" for="book_type">Type of Booking*:</label>
-				  <div class="col-sm-10">
-					<select class="form-control" name="book_type" id="book_type" onchange="checktype(this.value)" required>
-							<option value="">Select</option>
-							<option value="Regular">Regular</option>
-							<option value="Student">Student</option>
-							<option value="Corporate">Corporate</option>
-					</select>
-				  </div>
-				</div>
-				<div class="form-group col-sm-6 reg_hs" style="display: none;">
-				  <label class="control-label col-sm-6" for="reg_val">Regular:</label>
-				  <div class="col-sm-10">
-					<select class="form-control" name="reg_val" id="reg_val">
-							<option value="">Select</option>
-							<option value="age 6-20 yrs">Age 6-20 yrs</option>
-							<option value="Adults">Adults</option>
-					</select>
-				  </div>
-				</div>
-				<input type="hidden" name="package" value="<?php echo $package; ?>">
-				<div class="form-group col-sm-6">
-				  <label class="control-label col-sm-2" for="persons">Persons*:</label>
-				  <div class="col-sm-10">
-					<select class="form-control" name="persons" id="persons" required>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-					</select>
-				  </div>
-				</div>
-				</div>
-				<div class="contact-form">
-					<div class="form-group">
-					<div class="col-sm-10">
-						<input type="checkbox" id="myCheck"  required>
-						<label for="myCheck"> I agree to <a href="#" data-toggle="modal" data-target="#myModal"> T&C</a></label> 
+		<div class="container contact">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="contact-info">
+						<!--<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>-->
+						<h2 style="color: white;">Booking</h2>
+						<h4 style="color: white;">Book your game here</h4>
 					</div>
 				</div>
 
-				<div class="form-group">        
-				  <div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Submit</button>
-				  </div>
+				<div class="col-md-9">
+					<div class="contact-form">
+						<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Game:</label>
+						<div class="col-sm-10"> 
+						<h5><?php echo $category[$package]; ?></h5>         
+						</div>
+						</div>
+					</div>
+					<div class="contact-form row">
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-2" for="name">Name*:</label>
+						<div class="col-sm-10">          
+							<input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+						</div>
+						</div>
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-2" for="email">Email*:</label>
+						<div class="col-sm-10 col-sm-6">
+							<input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+						</div>
+						</div>
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-2" for="phone">Phone*:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
+						</div>
+						</div>
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-2" for="date_slot">Date*:</label>
+						<div class="col-sm-10">
+							<input type="date"  class="form-control" id="date_slot" name="date_slot"  min="<?php echo date("Y-m-d"); ?>" max="<?php echo  date("Y-m-d", strtotime("+30 days")); ?>" required>
+						</div>
+						</div>
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-6" for="time_slot">Time*:</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="time_slot" id="time_slot" required>
+								<option value="">Select</option>
+								<?php foreach($timeing[$package] as $key=>$val) { ?>
+									<option value="<?php echo $val; ?>"><?php echo $val; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+						</div>
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-6" for="book_type">Type of Booking*:</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="book_type" id="book_type" onchange="checktype(this.value)" required>
+									<option value="">Select</option>
+									<option value="Regular">Regular</option>
+									<option value="Student">Student</option>
+									<option value="Corporate">Corporate</option>
+							</select>
+						</div>
+						</div>
+						<div class="form-group col-sm-6 reg_hs" style="display: none;">
+						<label class="control-label col-sm-6" for="reg_val">Regular:</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="reg_val" id="reg_val">
+									<option value="">Select</option>
+									<option value="age 6-20 yrs">Age 6-20 yrs</option>
+									<option value="Adults">Adults</option>
+							</select>
+						</div>
+						</div>
+						<input type="hidden" name="package" value="<?php echo $package; ?>">
+						<div class="form-group col-sm-6">
+						<label class="control-label col-sm-2" for="persons">Persons*:</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="persons" id="persons" required>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+							</select>
+						</div>
+						</div>
+						</div>
+						<div class="contact-form">
+							<div class="form-group">
+							<div class="col-sm-10">
+								<input type="checkbox" id="myCheck"  required>
+								<label for="myCheck"> I agree to <a href="#" data-toggle="modal" data-target="#myModal"> T&C</a></label> 
+							</div>
+						</div>
+
+						<div class="form-group">        
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-</form>
+	</form>
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
-      
         <!-- Modal Header -->
         <div class="modal-header">
           <h5 class="modal-title">Terms & Conditions</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        
         <!-- Modal body -->
         <div class="modal-body">
          Terms and conditions
@@ -210,12 +207,12 @@ footer {
 </footer>
 
 <script>
-		function checktype(type_book)
-		{
-				if(type_book == 'Regular')
-				{ 
-						$(".reg_hs").show();
-				}
+	function checktype(type_book)
+	{
+		if(type_book == 'Regular')
+		{ 
+			$(".reg_hs").show();
 		}
+	}
 </script>
 </html>
